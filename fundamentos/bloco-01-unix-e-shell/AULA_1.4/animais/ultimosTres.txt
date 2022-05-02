@@ -1,0 +1,3 @@
+  551  history | tail -3
+  552  history | tail -3 | cat ultimosTres.txt
+  553  history | tail -3 | cat > ultimosTres.txt

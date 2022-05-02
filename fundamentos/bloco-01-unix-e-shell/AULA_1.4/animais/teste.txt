@@ -1,0 +1,6 @@
+.
+..
+animais_fofinhos.txt
+animais_raivosos.txt
+fofinhos_raivosos.txt
+teste.txt
