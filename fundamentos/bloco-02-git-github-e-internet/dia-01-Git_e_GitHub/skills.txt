@@ -5,3 +5,7 @@ O que eu vou aprender na Trybe:
 - Git
 - Softskills
 - python
+-Html
+-Java
+-Logica
+
