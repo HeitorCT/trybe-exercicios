@@ -1,0 +1,27 @@
+.caixa {
+    color: white;
+    display: inline-block ;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: top;
+  }
+  
+  .width-and-height {
+    height: 50px;
+    width: 50px;
+  }
+  
+  /* deixando visivel as padding dos blocos */
+  .padding {
+    padding: 20px;
+  }
+  
+  /* deixando visivel as magin dos blocos */
+  .margin {
+    margin: 30px;
+  }
+  
+  /* deixando visivel as border dos blocos */
+  .border {
+    border: 5px solid black;
+  }
