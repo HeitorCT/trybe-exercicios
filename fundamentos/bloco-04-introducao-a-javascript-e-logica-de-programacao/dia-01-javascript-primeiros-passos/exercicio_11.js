@@ -13,14 +13,8 @@ else if (salarioBruto <= 5189.82)
 else 
     descontoInss = 570.88;
 
-console.log (descontoInss);
 
-
-salarioLiquido = salarioBruto - descontoInss;
-
-
-
-if (salarioLiquido <= 1903.98)
+    if (salarioLiquido <= 1903.98)
     descontoIr = 0;
 else if (salarioLiquido <= 2826.65)
     descontoIr = (salarioLiquido * 0.075) - 142.80;
