@@ -1,9 +1,17 @@
-  h1, h3, ul{
-    text-align: center;
+  body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 851px;
+    height: 479px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  
+  h1{
+    color: brown;  
+  }  
 
-  li {
-    list-style-type: none;
+  p {
+    text-align: justify;
   }
 
   .first {
@@ -33,4 +41,14 @@
     text-align: center;
     width: 300px;
     display: inline-block;
+   }
+
+   .fato_curioso{
+     font-style: italic;
+     color: brown;
+   }
+
+   .images_sections{
+     width: 851px;
+     height: 479px;
    }
