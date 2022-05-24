@@ -43,19 +43,63 @@ function createDaysOfTheMonth() {
   }
 }
 
-function createButtonsHoliday (textB){
+function createButton (textButton, idButton){
   let buttonContainer = document.getElementsByClassName ('buttons-container');
   let newButton = document.createElement("button");
-  newButton.innerText = textB;
-  newButton.id = "btn-holiday";
+  newButton.innerText = textButton;
+  newButton.id = idButton;
   console.log(newButton);
   buttonContainer[0].appendChild(newButton);
 }
 
+// Escreva seu código abaixo.
 
 createDaysOfTheWeek();
 createDaysOfTheMonth();
-createButtonsHoliday("Feriados");
-// Escreva seu código abaixo.
+createButton("Feriados","btn-holiday");
+document.getElementById('btn-holiday').addEventListener("click", function(){
+	let  holidays = document.getElementsByClassName('holiday');
+	if(holidays[0].style.backgroundColor === "yellow"){
+		for ( let i = 0; i < holidays.length; i += 1){
+			holidays[i].style.backgroundColor = "rgb(238,238,238)";
+		}
+	}else{
+		for ( let i = 0; i < holidays.length; i += 1){
+			holidays[i].style.backgroundColor = "yellow";
+		}
+	}
+});
+
+
+
+createButton("Sexta-feira","btn-friday");
+document.getElementById('btn-friday').addEventListener("click", function(){
+	let  fridays = document.getElementsByClassName('friday');
+	if(+fridays[0].innerText) {
+		for ( let i = 0; i < fridays.length; i += 1){
+			fridays[i].innerText = "Sextou!";
+		}		
+	}else{
+		for ( let i = 0; i < fridays.length; i += 1){
+			fridays[i].innerText =  parseInt(fridays[i].previousSibling.innerText) + 1;
+		}
+	}
+});
+
+function addDaysListener (){
+	let  allDays = document.getElementsByClassName('day');
+	for ( let i = 0; i < allDays.length; i += 1){
+		allDays[i].addEventListener('mouseover',function(){
+			console.log(allDays[i].innerText);
+			allDays[i].style.fontSize = "50px";
+		});
+		allDays[i].addEventListener('mouseout',function(){
+			console.log(allDays[i].innerText);
+			allDays[i].style.fontSize = "20px";
+		});
+	}	
+}
+
+addDaysListener();
 
 
