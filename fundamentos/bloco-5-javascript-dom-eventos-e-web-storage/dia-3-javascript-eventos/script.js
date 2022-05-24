@@ -24,27 +24,38 @@ function createDaysOfTheWeek() {
 	}
 }
 
-function creatDaysOfTheMonth() {
+function createDaysOfTheMonth() {
 	const monthDaysList = document.getElementById ('days');
   
   for (i = 0; i < dezDaysList.length; i += 1) {
     let day = document.createElement("li");
     day.innerText = dezDaysList[i];
-    day.classList.add('day');
+    day.classList.add("day");
     
     if(dezDaysList[i] === 24 || dezDaysList[i] === 25 || dezDaysList[i] === 31){
-      day.classList.add('holiday');
+      day.classList.add("holiday");
     }
-    if(dezDaysList[i] === '4' || dezDaysList[i] === 11 || dezDaysList[i] === 18 || dezDaysList[i] === 25){
-      day.classList.add('friday');
+    if(dezDaysList[i] === 4 || dezDaysList[i] === 11 || dezDaysList[i] === 18 || dezDaysList[i] === 25){
+      day.classList.add("friday");
     }
 
     monthDaysList.appendChild (day);
   }
 }
 
+function createButtonsHoliday (textB){
+  let buttonContainer = document.getElementsByClassName ('buttons-container');
+  let newButton = document.createElement("button");
+  newButton.innerText = textB;
+  newButton.id = "btn-holiday";
+  console.log(newButton);
+  buttonContainer[0].appendChild(newButton);
+}
+
+
 createDaysOfTheWeek();
-creatDaysOfTheMonth();
+createDaysOfTheMonth();
+createButtonsHoliday("Feriados");
 // Escreva seu código abaixo.
 
 
