@@ -59,12 +59,10 @@ createDaysOfTheMonth();
 createButton("Feriados","btn-holiday");
 document.getElementById('btn-holiday').addEventListener("click", function(){
 	let  holidays = document.getElementsByClassName('holiday');
-	if(holidays[0].style.backgroundColor === "yellow"){
-		for ( let i = 0; i < holidays.length; i += 1){
+	for ( let i = 0; i < holidays.length; i += 1){
+		if(holidays[i].style.backgroundColor === "yellow"){	
 			holidays[i].style.backgroundColor = "rgb(238,238,238)";
-		}
-	}else{
-		for ( let i = 0; i < holidays.length; i += 1){
+		}else {		
 			holidays[i].style.backgroundColor = "yellow";
 		}
 	}
@@ -89,12 +87,11 @@ document.getElementById('btn-friday').addEventListener("click", function(){
 function addDaysListener (){
 	let  allDays = document.getElementsByClassName('day');
 	for ( let i = 0; i < allDays.length; i += 1){
-		allDays[i].addEventListener('mouseover',function(){
-			console.log(allDays[i].innerText);
-			allDays[i].style.fontSize = "50px";
+		allDays[i].addEventListener('mouseover',function(eve){
+			eve.target.style.fontSize = "50px"; //testanto e event.taget;
+			
 		});
 		allDays[i].addEventListener('mouseout',function(){
-			console.log(allDays[i].innerText);
 			allDays[i].style.fontSize = "20px";
 		});
 	}	
@@ -102,4 +99,53 @@ function addDaysListener (){
 
 addDaysListener();
 
+function createTask (textTask, idTask){
+	let taskContainer = document.getElementsByClassName ('my-tasks');
+	let newTask = document.createElement("span");
+	newTask.innerText = textTask;
+	taskContainer[0].appendChild(newTask);
+}
 
+createTask("Cozinhar");
+
+function createTaskCaption (colorCaption, classCaption){
+	let captionContainer = document.getElementsByClassName ('my-tasks');
+	let newCaption = document.createElement("div");
+	newCaption.className = classCaption;
+	newCaption.style.backgroundColor = colorCaption;
+	captionContainer[0].appendChild(newCaption);
+}
+createTaskCaption("#FF0000","my-task");
+
+function selectDiv() {
+	let myDiv = document.getElementsByClassName('my-task');
+	for ( let i = 0; i < myDiv.length; i += 1){
+		myDiv[i].addEventListener("click",function(){
+			if (myDiv[i].className.search ("task-selected") === -1){
+				myDiv[i].classList.remove("task");
+				myDiv[i].classList.add("task-selected");	
+			}else{									
+				myDiv[i].classList.replace("task-selected","task");
+			}
+		});		
+	}	
+}
+selectDiv();
+
+function paintSelectDay() {
+	let allDays = document.querySelectorAll(".day");
+	let colorTask = document.getElementsByClassName('my-task');
+	for ( let i = 0; i < allDays.length; i += 1){
+		allDays[i].addEventListener("click",function(){
+			if (colorTask[0].className.search ("task-selected") != -1){
+				if (allDays[i].style.color === ''){
+					allDays[i].style.color = colorTask[0].style.backgroundColor; 
+				}else{									
+					allDays[i].style.color = "rgb(119,119,119)";
+				}
+			}	
+		});		
+	}	
+}
+paintSelectDay();
+console.log("WTF");
