@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<h1>CONCURSO: VIAGEM MARAVILHOSA</h1>
+		</header>
+		<form action="" method="get" style="border: solid black;">
+			<fieldset>
+				<label for="name">Nome:
+					<input type="text" name="name" id="name" minlength="10" maxlength="40"/>
+				</label>
+				<br>
+                <label for="email">Email:
+					<input type="email" name="email" id="email" minlength="10" maxlength="50"/>
+				</label>
+			</fieldset>
+
+            <fieldset>
+				<label for="option">
+					<input type="radio" name="option" id="city1"/>
+                    Opção 1:		
+					<input type="radio" name="option" id="city2"/>
+                    Opção 2:              
+					<input type="radio" name="option" id="city3"/>
+                    Opção 3:			
+					<input type="radio" name="option" id="city4"/>
+                    Opção 4:
+				</label>
+                <label for="option"><p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+                    <textarea name="sobre-mim" id="textarea" cols="30" rows="5" placeholder="Responda aqui." maxlength="500"></textarea>
+                </label>
+                <br>
+                Qual a melhor data para realizar sua viagem?
+                <br><br>
+                <input type="date" name="data" id="data">
+                <br><br>
+                <label for="agreeNews">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+                    <input type="checkbox" name="agreeNews" id="agreeNews">
+                </label>
+                <br>
+                <label for="agreeOp">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+                    <input type="checkbox" name="agreeOp" id="agreeOp">
+                </label>
+			</fieldset>
+            <fieldset>
+                <button type="submit" id="submitButton">Enviar</button>
+                <button type="reset">Apagar</button>
+            </fieldset>
+		</form>
+
+        <script src="/script.js"></script>
+	</body>
+</html>
