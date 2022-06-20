@@ -1,0 +1,2 @@
+# Ignore todas as pasta node_modules dos exercicios.
+node_modules
