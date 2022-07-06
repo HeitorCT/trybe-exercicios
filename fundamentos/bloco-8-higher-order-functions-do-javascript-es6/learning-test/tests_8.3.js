@@ -61,16 +61,46 @@
 
 // console.table(listProducts);
 
-const musicas = [
-  { id: "31031685", title: "Partita in C moll BWV 997" },
-  { id: "31031686", title: "Toccata and Fugue, BWV 565" },
-  { id: "31031687", title: "Chaconne, Partita No. 2 BWV 1004" },
+// const musicas = [
+//   { id: "31031685", title: "Partita in C moll BWV 997" },
+//   { id: "31031686", title: "Toccata and Fugue, BWV 565" },
+//   { id: "31031687", title: "Chaconne, Partita No. 2 BWV 1004" },
+// ];
+
+// musicas.filter((element) => {
+//     element.isDriver === false})
+// .map((element) => {
+//     return `${element.nome}  ${element.sobrenome}`;
+// });
+
+// console.table(filtered);
+
+// const teste = { includeNames: true, sorted: true};
+
+// const { includeNames, sex, sorted } = teste;
+
+// let test;
+
+// console.table(test === undefined);
+// console.table('sex:' +sex);
+// console.table('sorted:' +sorted);
+
+const objPeople = [
+  { name: "José", age: 21 },
+  { name: "Lucas", age: 19 },
+  { name: "Maria", age: 16 },
+  { name: "Gilberto", age: 18 },
+  { name: "Vitor", age: 15 },
 ];
 
-musicas.filter((element) => {
-    element.isDriver === false})    
-.map((element) => { 
-    return `${element.nome}  ${element.sobrenome}`;
-});
+const func = (acc, curr) => {
+  if (curr.age > 16) {
+    acc.push(curr);
+  }
+  return acc;
+};
 
-console.table(filtered);
+const verifyAgeDrive = objPeople.reduce(func, []);
+
+console.table(verifyAgeDrive);
+// [ { name: 'Maria', age: 16 }, { name: 'Vitor', age: 15 } ]
