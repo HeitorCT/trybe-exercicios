@@ -5,7 +5,7 @@ const getMarsTemperature = () => {
   return Math.floor(Math.random() * maxTemperature);
 };
 
-const sendMarsTemperature = () => setTimeout(() => console.log(getMarsTemperature()), messageDelay());
+const sendMarsTemperature = () => setTimeout(() => console.log(`Mars temperature is: ${getMarsTemperature()} degree Celsius`), messageDelay());
 
 
 sendMarsTemperature(); 
