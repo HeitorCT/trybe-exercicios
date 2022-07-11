@@ -1,8 +1,15 @@
-const uppercase = require("./Exercicio_7");
+const uppercase = require('./Exercicio_7');
 
-describle("Test function Uppercase", () => {
-  test('test "is simply dummy text of the printing and typesetting industry"', () => {
-    let phase = "is simply dummy text";
-    expect(uppercase(phase)).toEqual("IS SIMPLY DUMMY TEXT");
+describe('Test function Uppercase', () => {
+  test('test "is simply dummy text"', (done) => {
+    const phrase = 'is simply dummy text';
+    uppercase(phrase, (str) => {
+      try {
+        expect(str).toEqual('IS SIMPLY DUMMY TEXT');
+        done();
+      } catch (error) {
+        done(error);
+      }
+    });
   });
 });
