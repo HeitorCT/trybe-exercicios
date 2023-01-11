@@ -19,7 +19,7 @@ class alunos {
     return count;
   }
 
- mediaDasNotas ():number {
+  mediaDasNotas ():number {
     const media = this.somaDasNotas()/( this._notasProvas.length +  this._notasTrabalho.length);
     return media;
   }
