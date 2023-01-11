@@ -1,4 +1,4 @@
-class client {
+class Client {
   name: string
 
   constructor(name: string){
@@ -6,13 +6,13 @@ class client {
   }
 }
 
-class order {
-  client: client
-  items: item[]
+class Order {
+  client: Client
+  items: Item[]
   paymentType: string
   discount: number
 
-  constructor(client: client, items: item[], paymentType: string, discount: number){
+  constructor(client: Client, items: Item[], paymentType: string, discount: number){
     this.client = client;
     this.items = items;
     this.paymentType = paymentType;
@@ -32,7 +32,7 @@ class order {
   }
 }
 
-class item {
+class Item {
   product: string
   price: number
 
@@ -42,11 +42,11 @@ class item {
   }
 }
 
-const c = new client('Shaolin Pig Killer');
-const itemA = new item('Potato', 5);
-const itemB = new item('Coke', 2.50);
-const itemC = new item('Chocolate', 4.0);
-const itemD = new item('Coffe', 1);
-const theOrder = new order(c,[itemA, itemB, itemC, itemD],'money', 0.1)
+const c = new Client('Shaolin Pig Killer');
+const itemA = new Item('Potato', 5);
+const itemB = new Item('Coke', 2.50);
+const itemC = new Item('Chocolate', 4.0);
+const itemD = new Item('Coffe', 1);
+const theOrder = new Order(c,[itemA, itemB, itemC, itemD],'money', 0.1)
 console.log(`total order value: ${theOrder.calcOrderValue()}`);
 console.log(`total order value with discount: ${theOrder.calcOrderValueWithDiscount()}`);

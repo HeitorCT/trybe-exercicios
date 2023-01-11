@@ -1,39 +1,39 @@
-var client = /** @class */ (function () {
-    function client(name) {
+var Client = /** @class */ (function () {
+    function Client(name) {
         this.name = name;
     }
-    return client;
+    return Client;
 }());
-var order = /** @class */ (function () {
-    function order(client, items, paymentType, discount) {
+var Order = /** @class */ (function () {
+    function Order(client, items, paymentType, discount) {
         this.client = client;
         this.items = items;
         this.paymentType = paymentType;
         this.discount = discount;
     }
-    order.prototype.calcOrderValue = function () {
+    Order.prototype.calcOrderValue = function () {
         var value = 0;
         this.items.forEach(function (nP) { return value += nP.price; });
         return value;
     };
-    order.prototype.calcOrderValueWithDiscount = function () {
+    Order.prototype.calcOrderValueWithDiscount = function () {
         var value = this.calcOrderValue() * (1 - this.discount);
         return value;
     };
-    return order;
+    return Order;
 }());
-var item = /** @class */ (function () {
-    function item(product, price) {
+var Item = /** @class */ (function () {
+    function Item(product, price) {
         this.product = product;
         this.price = price;
     }
-    return item;
+    return Item;
 }());
-var c = new client('Shaolin Pig Killer');
-var itemA = new item('Potato', 5);
-var itemB = new item('Coke', 2.50);
-var itemC = new item('Chocolate', 4.0);
-var itemD = new item('Coffe', 1);
-var theOrder = new order(c, [itemA, itemB, itemC, itemD], 'money', 0.1);
+var c = new Client('Shaolin Pig Killer');
+var itemA = new Item('Potato', 5);
+var itemB = new Item('Coke', 2.50);
+var itemC = new Item('Chocolate', 4.0);
+var itemD = new Item('Coffe', 1);
+var theOrder = new Order(c, [itemA, itemB, itemC, itemD], 'money', 0.1);
 console.log("total order value: " + theOrder.calcOrderValue());
 console.log("total order value with discount: " + theOrder.calcOrderValueWithDiscount());

@@ -1,4 +1,4 @@
-class alunos {
+class Alunos {
   
   _matricula: number;
   _nome: string;
@@ -25,6 +25,6 @@ class alunos {
   }
 }
 
-const a = new alunos(98789, 'Zezinho',[10,10,10,10],[10,10]);
+const a = new Alunos(98789, 'Zezinho',[10,10,10,10],[10,10]);
 console.log(a.mediaDasNotas());
 console.log(a.somaDasNotas());
