@@ -22,7 +22,7 @@ class Data {
   }
 }
 
-const d = new Data(01, 01, 2004);
+const d = new Data(1, 1, 2004);
 const d2 = new Data(27,09, 2003);
 console.log(d.getMonthName());
 console.log(d.isLeapYear());
